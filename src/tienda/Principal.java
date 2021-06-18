@@ -1,7 +1,8 @@
 package src.tienda;
 
 import src.clientes.VectorClientes;
-import src.pelicula.ManejoPelicula;
+import src.peliculas.VectorPelicula;
+
 
 public class Principal {
 
@@ -10,7 +11,7 @@ public class Principal {
     }
 
     private VectorClientes tablaClientes = new VectorClientes();
-    private ManejoPelicula listadoPelicula = new ManejoPelicula();
+    private VectorPelicula tablaPeliculas = new VectorPelicula();
 
     public Principal(){
 
@@ -24,10 +25,7 @@ public class Principal {
             System.out.println("4) Ordenar Clientes Descendente");
             System.out.println("5) Registrar pelicula");
             System.out.println("6) Mostrar peliculas");
-            System.out.println("7) Ordenar peliculas Ascente respecto Nombre");
-            System.out.println("8) Ordenar peliculas Descendente respecto Nombre");
-            System.out.println("9) Ordenar peliculas Ascente respecto Id");
-            System.out.println("10) Ordenar peliculas Descendente respecto Id");
+            System.out.println("7) Mostrar peliculas ordenadas");
             System.out.println("-1) Salir");
             System.out.println("\n");
             menu = IngresoDatos.getEntero("Ingrese la opción ", true);
@@ -57,16 +55,23 @@ public class Principal {
                 tablaClientes.mostrarClientes();
             }
             if (menu == 5){
-                //agregar al la base de datos
-                listadoPelicula.agreagarPelicula();
+                //ingreso peliculas
+                tablaPeliculas.agregarPelicula();
             }
+
             if (menu == 6){
-                //mostrar listado de peliculas
-                listadoPelicula.mostrarCatalogo();
+
+                tablaPeliculas.mostrarPeliculas();
+
+
             }
-            
-
-
+            if (menu == 7){
+                System.out.println("Desordenado:");
+                tablaPeliculas.mostrarPeliculas();
+                System.out.println("\n\nOrdenado:");
+                tablaPeliculas.ordenarPorNombreP(true);
+                tablaPeliculas.mostrarPeliculas();
+            }
         }
 
     }

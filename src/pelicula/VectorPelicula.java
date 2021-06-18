@@ -36,7 +36,7 @@ public class VectorPelicula{
 	public void mostrarPeliculas(){
 		System.out.println("\n\n Peliculas");
 		for (int i = 0; i <(siguientePelicula-1); i++){
-			System.out.println("-"+i+") "+pelicula[i].getContar());
+			System.out.println("-"+i+") "+((Pelicula) pelicula[i]).getContar());
 
 		}
 
@@ -64,4 +64,4 @@ public class VectorPelicula{
 
     }
 
-} 
+}

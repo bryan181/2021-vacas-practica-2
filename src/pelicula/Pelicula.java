@@ -1,53 +1,51 @@
-package pelicula;
-public class Pelicula {
-    private int id;
-    private int fecha;
-    private String nombre;
-    private String categoria;
-    private boolean disponible;
-    public Pelicula(int id, int fecha, String nombre, String categoria, boolean disponible) {
-        this.id = id;
-        this.fecha = fecha;
-        this.nombre = nombre;
-        this.categoria = categoria;
-        this.disponible = disponible;
-    }
-    public Pelicula(int id, int fecha, String nombre, String categoria){
-        this(id, fecha, nombre, categoria, true);
-    }
+package src.peliculas;
 
-    public void setId(int id){
-        this.id = id;
-    }
-    public void setFecha(int fecha){
-        this.fecha = fecha;
-    }
-    public void setNombre(String nombre){
-        this.nombre = nombre;
-    }
-    public void setCategoria(String categoria){
-        this.categoria = categoria;
-    }
-    public void setDisponible(boolean disponible){
-        this.disponible = disponible;
-    }
+public class Pelicula{
+	private int id;
+	private int año;
+	private String nombre;
+	private String categoria;
 
-    public int getId(){
+	public Pelicula(int id, int año, String nombre, String categoria){
+		this.id = id;
+		this.año = año;
+		this.nombre = nombre;
+		this.categoria = categoria;
+	}
+
+	//get y set
+	   public int getId(){
         return id;
     }
-    public int getFecha(){
-        return fecha;
+
+    public int getAño(){
+        return año;
     }
+
     public String getNombre(){
         return nombre;
     }
+
     public String getCategoria(){
         return categoria;
     }
-    public boolean getDisponible(){
-        return disponible;
+
+    public void setNombre(String nombre){
+        this.nombre = nombre;
     }
-    public String mostrar(){
-        return "id < "+ this.id +" > nombre < "+this.nombre+" > fecha < "+this.fecha+" > categoria < "+this.categoria+" > ";
+
+    public void setAnio(int año){
+        this.año = año;
     }
-}
+
+    public void setCategoria(String categoria){
+    	this.categoria = categoria;
+    }
+
+    public String getContar(){
+        String prueba = "Id: "+id+"  Categoria: "+categoria+"  Nombre de la pelicula: "+nombre+ "   Año: " +año;
+        
+        return prueba;
+    }
+
+} 
