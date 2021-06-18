@@ -1,5 +1,4 @@
-package src.pelicula;
-
+package pelicula;
 public class Pelicula {
     private int id;
     private int fecha;
